@@ -1,1970 +1,1087 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff3f7">
+<title>For Priyanshi 💗</title>
 
-<title>For Priyanshi 🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Georgia,"Times New Roman",serif;
-    color:#613b4b;
-    overflow-x:hidden;
-
-    background:
-        radial-gradient(circle at 10% 10%,#ffffff 0%,transparent 28%),
-        radial-gradient(circle at 90% 20%,#ffe0eb 0%,transparent 30%),
-        radial-gradient(circle at 50% 100%,#ffe8cc 0%,transparent 35%),
-        linear-gradient(135deg,#fffafd,#ffedf4,#fff7ed);
-}
-
-
-/* =====================================================
-   FLOATING PETALS
-===================================================== */
-
-#petals{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    overflow:hidden;
-    z-index:50;
-}
-
-.petal{
-    position:absolute;
-    top:-50px;
-    animation:petalFall linear infinite;
-    opacity:.55;
-}
-
-@keyframes petalFall{
-
-    0%{
-        transform:
-            translateY(-60px)
-            rotate(0deg);
-    }
-
-    100%{
-        transform:
-            translateY(110vh)
-            rotate(420deg);
-    }
-
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero{
-
-    min-height:100vh;
-
-    position:relative;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:40px 20px;
-
-    overflow:hidden;
-
-    background:
-        radial-gradient(
-            circle at 50% 40%,
-            rgba(255,255,255,.95),
-            transparent 33%
-        );
+:root {
+  --pink:#f6c9d8;
+  --rose:#e99ab7;
+  --lav:#dcd2f4;
+  --cream:#fffaf7;
+  --ink:#553d50;
+  --muted:#8c7186;
 }
-
-
-.hero::before{
 
-    content:"";
+* { box-sizing:border-box; }
 
-    position:absolute;
+html { scroll-behavior:smooth; }
 
-    width:650px;
-    height:650px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,166,198,.2),
-            transparent 70%
-        );
-
-    animation:heroGlow 5s ease-in-out infinite;
-
+body {
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
 }
-
-@keyframes heroGlow{
 
-    50%{
-        transform:scale(1.12);
-        opacity:.65;
-    }
+button { font:inherit; cursor:pointer; }
 
+#progress {
+  position:fixed;
+  top:0;left:0;
+  height:3px;width:0;
+  background:linear-gradient(90deg,#e99ab7,#c9b8ec,#e8c78f);
+  z-index:100;
 }
-
-
-.hero-content{
 
-    position:relative;
-    z-index:2;
-
-    max-width:900px;
-
+#intro {
+  position:fixed;
+  inset:0;
+  z-index:50;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:25px;
+  background:radial-gradient(circle at top,#fff,#fff0f6 55%,#eee8fb);
+  transition:1s;
 }
-
-
-.eyebrow{
-
-    font-family:Arial,sans-serif;
-
-    text-transform:uppercase;
 
-    letter-spacing:6px;
-
-    font-size:11px;
-
-    color:#b46680;
-
-    margin-bottom:28px;
-
-    animation:fadeUp 1s ease;
-
+#intro.hide {
+  opacity:0;
+  visibility:hidden;
 }
-
-
-.hero h1{
 
-    font-size:
-        clamp(65px,14vw,150px);
-
-    line-height:.82;
-
-    font-weight:normal;
-
-    color:#a13e62;
-
-    letter-spacing:-5px;
-
-    margin-bottom:40px;
-
-    text-shadow:
-        0 12px 35px
-        rgba(161,62,98,.12);
-
-    animation:fadeUp 1.3s ease;
-
+.intro-title {
+  font:600 clamp(2.7rem,9vw,5rem)/1 'Cormorant Garamond';
+  color:#704d68;
 }
-
-
-.hero h1 span{
-
-    display:block;
-
-    color:#d86f92;
 
-    font-style:italic;
-
+.intro-title span {
+  font-family:'Parisienne';
+  color:#d47fa2;
 }
-
-
-.hero p{
-
-    max-width:650px;
-
-    margin:auto;
-
-    font-size:19px;
 
-    line-height:2;
-
-    color:#765061;
-
-    animation:fadeUp 1.6s ease;
-
+.gift {
+  font-size:90px;
+  display:block;
+  margin:30px;
+  animation:bob 2s infinite;
 }
-
-
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
 
+@keyframes bob {
+  50% { transform:translateY(-12px) rotate(5deg); }
 }
 
-
-.scroll{
-
-    position:absolute;
-
-    bottom:28px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    font-family:Arial,sans-serif;
-
-    font-size:10px;
-
-    letter-spacing:4px;
-
-    color:#a87688;
-
-    animation:bounce 2s infinite;
-
+.btn {
+  border:0;
+  border-radius:40px;
+  padding:15px 25px;
+  background:linear-gradient(120deg,#e99ab7,#c9b8ec);
+  color:white;
+  font-weight:700;
+  box-shadow:0 10px 25px #d79ab74d;
+  transition:.3s;
 }
 
-@keyframes bounce{
+.btn:hover { transform:translateY(-3px); }
 
-    50%{
-        transform:translate(-50%,8px);
-    }
-
+main {
+  opacity:0;
+  transition:1s;
 }
-
 
-/* =====================================================
-   GENERAL
-===================================================== */
+main.ready { opacity:1; }
 
-section{
-    padding:120px 20px;
+section {
+  padding:90px 22px;
+  position:relative;
 }
 
-.inner{
-    max-width:1050px;
-    margin:auto;
+.wrap {
+  width:min(100%,1000px);
+  margin:auto;
 }
 
-.label{
+.center { text-align:center; }
 
-    text-align:center;
-
-    text-transform:uppercase;
-
-    letter-spacing:5px;
-
-    font-family:Arial,sans-serif;
-
-    font-size:10px;
-
-    color:#b76782;
-
-    margin-bottom:18px;
-
+.kicker {
+  color:#b17c9b;
+  font-size:12px;
+  letter-spacing:4px;
+  text-transform:uppercase;
 }
-
-.title{
-
-    text-align:center;
-
-    font-weight:normal;
-
-    font-size:
-        clamp(45px,8vw,85px);
-
-    line-height:1;
-
-    color:#9e3e60;
 
-    margin-bottom:25px;
+h1,h2,h3 { font-family:'Cormorant Garamond',serif; }
 
+h2 {
+  font-size:clamp(2.5rem,6vw,4rem);
+  line-height:1;
 }
 
-.description{
-
-    max-width:680px;
-
-    margin:0 auto 70px;
-
-    text-align:center;
-
-    font-size:18px;
-
-    line-height:1.9;
-
-    color:#795263;
-
+.lead {
+  max-width:650px;
+  margin:auto;
+  color:var(--muted);
+  line-height:1.9;
 }
-
-
-/* =====================================================
-   BRACELET / GIFT
-===================================================== */
 
-.gift{
-
-    background:
-        linear-gradient(
-            180deg,
-            #fff9fb,
-            #fff0f5
-        );
-
-    min-height:100vh;
+.hero {
+  min-height:95vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  background:radial-gradient(ellipse at top,#fff,#fff3f7 50%,#f0ebfb);
+  overflow:hidden;
 }
-
 
-.gift-stage{
-
-    height:480px;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    position:relative;
-
+.hero h1 {
+  font-size:clamp(3rem,10vw,7rem);
+  line-height:.9;
+  color:#714e68;
 }
-
-
-/* Bracelet */
-
-.bracelet{
-
-    width:310px;
-    height:310px;
-
-    position:relative;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    animation:
-        braceletFloat 4s ease-in-out infinite;
 
+.hero h1 span {
+  display:block;
+  font-family:'Parisienne';
+  color:#d77fa2;
+  font-size:1.2em;
+  line-height:1.3;
 }
 
-@keyframes braceletFloat{
-
-    50%{
-        transform:
-            translateY(-13px)
-            rotate(2deg);
-    }
-
+.hero-cake {
+  font-size:75px;
+  animation:bob 3s infinite;
 }
-
-
-.ring{
-
-    position:absolute;
-
-    width:285px;
-    height:285px;
 
-    border-radius:50%;
-
-    border:
-        13px solid transparent;
-
-    border-top-color:#e6a04e;
-    border-right-color:#e47b9b;
-    border-bottom-color:#f0bd70;
-    border-left-color:#c44d73;
-
-    filter:
-        drop-shadow(
-            0 12px 20px
-            rgba(181,72,105,.2)
-        );
-
-    transform:rotate(-25deg);
-
+.decor {
+  position:absolute;
+  font-size:30px;
+  animation:float 7s infinite ease-in-out;
 }
-
-
-.ring::after{
 
-    content:"";
+.decor.a { top:15%;left:9%; }
+.decor.b { top:25%;right:10%; }
+.decor.c { bottom:15%;left:15%; }
 
-    position:absolute;
-
-    inset:-11px;
-
-    border-radius:50%;
-
-    border:
-        2px dashed
-        rgba(197,127,68,.35);
-
+@keyframes float {
+  50% { transform:translate(12px,-20px) rotate(15deg); }
 }
-
-
-.center{
-
-    width:155px;
-    height:155px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    position:relative;
-
-    z-index:2;
-
-    font-size:58px;
 
-    color:white;
-
-    background:
-
-        radial-gradient(
-            circle at 30% 25%,
-            #fff9cf,
-            #ffd1df 25%,
-            #e27497 55%,
-            #bd426a 100%
-        );
-
-    box-shadow:
-
-        0 15px 45px
-        rgba(189,66,106,.22),
-
-        inset 0 0 25px
-        rgba(255,255,255,.55);
-
+.soft {
+  background:linear-gradient(145deg,#fff7fa,#f5f0ff);
 }
-
-
-.center::before{
-
-    content:"✦";
-
-    position:absolute;
-
-    top:15px;
-    left:20px;
-
-    font-size:17px;
-
-    opacity:.7;
 
+.card {
+  background:#fffdfb;
+  border:1px solid #f1dce5;
+  border-radius:28px;
+  padding:35px;
+  box-shadow:0 20px 60px #b98ba31c;
+  margin:35px auto;
+  max-width:760px;
 }
 
-.center::after{
-
-    content:"✦";
-
-    position:absolute;
-
-    bottom:20px;
-    right:18px;
-
-    font-size:13px;
-
-    opacity:.7;
-
+.envelope {
+  font-size:60px;
+  background:none;
+  border:0;
+  transition:.3s;
 }
-
-
-.gift-caption{
-
-    position:absolute;
-
-    bottom:10px;
-
-    width:100%;
-
-    text-align:center;
-
-    color:#a46c7e;
 
-    font-style:italic;
+.envelope:hover { transform:rotate(-10deg) scale(1.1); }
 
-    font-size:17px;
-
+.letter {
+  display:none;
+  font:22px/1.8 'Cormorant Garamond';
+  white-space:pre-line;
+  text-align:left;
 }
-
-
-/* =====================================================
-   LETTER
-===================================================== */
-
-.letter-section{
-
-    background:
-
-        radial-gradient(
-            circle at 10% 30%,
-            rgba(255,220,232,.7),
-            transparent 25%
-        ),
 
-        #fffafc;
-
+.letter.show {
+  display:block;
+  animation:fade .8s;
 }
-
-
-.letter{
-
-    max-width:850px;
-
-    margin:auto;
-
-    padding:60px 55px;
-
-    border-radius:35px;
 
-    background:
-        rgba(255,255,255,.8);
-
-    border:
-        1px solid
-        rgba(173,78,110,.12);
-
-    box-shadow:
-        0 30px 80px
-        rgba(135,56,83,.1);
-
-    backdrop-filter:blur(10px);
-
+@keyframes fade {
+  from { opacity:0;transform:translateY(15px); }
+  to { opacity:1;transform:none; }
 }
-
-
-.letter p{
 
-    font-size:20px;
-
-    line-height:2;
-
-    color:#6e4657;
-
-    margin-bottom:25px;
-
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+  margin-top:40px;
 }
-
-
-.highlight{
-
-    color:#c24f76;
 
-    font-weight:bold;
-
+.reason {
+  background:white;
+  border:1px solid #f0dce5;
+  border-radius:22px;
+  padding:25px;
+  transition:.3s;
 }
-
-
-.signature{
-
-    margin-top:40px;
-
-    text-align:right;
-
-    font-style:italic;
 
-    color:#ae6980;
-
+.reason:hover {
+  transform:translateY(-8px) rotate(-1deg);
+  box-shadow:0 15px 35px #9e6b8320;
 }
-
-
-/* =====================================================
-   PERSONAL DETAILS
-===================================================== */
 
-.details{
+.reason .emoji { font-size:35px; }
 
-    background:
-        linear-gradient(
-            135deg,
-            #fff5f8,
-            #fff8ef
-        );
-
+.reason p {
+  color:#806a7b;
+  line-height:1.7;
 }
-
-
-.grid{
 
-    display:grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(230px,1fr)
-        );
-
-    gap:24px;
-
+.friendship {
+  background:linear-gradient(135deg,#f8edf5,#f2effc);
 }
-
-
-.detail{
-
-    min-height:300px;
 
-    padding:35px 28px;
-
-    border-radius:28px;
-
-    background:
-        rgba(255,255,255,.75);
-
-    border:
-        1px solid
-        rgba(175,75,107,.1);
-
-    box-shadow:
-        0 15px 40px
-        rgba(150,64,91,.07);
-
-    transition:.35s;
-
+.quote {
+  font:600 clamp(1.7rem,4vw,2.7rem)/1.3 'Cormorant Garamond';
+  color:#9b6485;
+  margin-top:35px;
 }
-
 
-.detail:hover{
-
-    transform:
-        translateY(-9px);
-
-    box-shadow:
-        0 25px 50px
-        rgba(150,64,91,.13);
-
+.wish-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin:35px 0;
 }
-
-
-.icon{
-
-    font-size:48px;
 
-    margin-bottom:25px;
-
+.wish {
+  background:linear-gradient(145deg,#fff,#fff3f7);
+  border:1px solid #f3e0e8;
+  border-radius:16px;
+  padding:15px;
+  color:#866c7f;
+  opacity:0;
+  transform:translateY(10px);
+  transition:.5s;
 }
-
-
-.detail h3{
-
-    font-size:25px;
-
-    color:#a14364;
-
-    font-weight:normal;
-
-    margin-bottom:15px;
 
+.wish.visible {
+  opacity:1;
+  transform:none;
 }
 
-
-.detail p{
-
-    color:#795363;
-
-    line-height:1.8;
-
+.reminders {
+  background:linear-gradient(140deg,#f9e8f0,#eee9fb);
 }
-
-
-/* =====================================================
-   MEMORY SECTION
-===================================================== */
 
-.memories{
-
-    background:#fff;
-
+.reminder-list {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  margin-top:35px;
 }
-
-
-.memory{
-
-    min-height:330px;
-
-    padding:35px;
-
-    border-radius:30px;
 
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-end;
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            #ffe0eb,
-            #fff0da
-        );
-
-    border:
-        1px solid
-        rgba(172,78,108,.1);
-
-    box-shadow:
-        0 15px 35px
-        rgba(140,58,83,.08);
-
-    transition:.35s;
-
+.reminder {
+  padding:15px 20px;
+  background:#ffffffbb;
+  border-radius:30px;
+  color:#8c6481;
+  font:600 20px 'Cormorant Garamond';
 }
-
-
-.memory::before{
-
-    content:"";
 
-    position:absolute;
-
-    width:180px;
-    height:180px;
-
-    border-radius:50%;
-
-    background:
-        rgba(255,255,255,.45);
-
-    top:-80px;
-    right:-50px;
-
+.cake-area {
+  background:#fff8f4;
 }
-
 
-.memory:hover{
-
-    transform:
-        scale(1.025)
-        rotate(-.5deg);
-
+.cake {
+  font-size:110px;
+  margin:20px;
 }
-
 
-.memory-icon{
-
-    font-size:58px;
-
-    margin-bottom:auto;
-
+.candles {
+  display:flex;
+  justify-content:center;
+  gap:20px;
 }
-
 
-.memory h3{
-
-    font-size:25px;
-
-    color:#a04364;
-
-    font-weight:normal;
-
-    margin-bottom:12px;
-
+.candle {
+  height:55px;
+  width:13px;
+  border:0;
+  border-radius:8px;
+  background:#f6c5d7;
+  position:relative;
 }
-
 
-.memory p{
-
-    color:#765060;
-
-    line-height:1.7;
-
+.candle:before {
+  content:'';
+  position:absolute;
+  width:12px;
+  height:18px;
+  top:-20px;
+  left:0;
+  border-radius:50%;
+  background:radial-gradient(#fff5b4,#ffbf69,#f28c67);
+  box-shadow:0 0 12px #ffbb66;
 }
-
-
-/* =====================================================
-   SURPRISE
-===================================================== */
-
-.surprise{
-
-    min-height:100vh;
 
-    display:flex;
+.candle.out:before { display:none; }
 
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    background:
-
-        radial-gradient(
-            circle at center,
-            #ffe4ee,
-            #fff5ea 65%
-        );
-
+.gallery {
+  background:#fcf7fb;
 }
-
 
-.surprise-content{
-
-    max-width:850px;
-
+.gallery-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:40px;
 }
-
-
-.surprise h2{
-
-    font-size:
-        clamp(
-            50px,
-            10vw,
-            105px
-        );
-
-    font-weight:normal;
-
-    line-height:.9;
 
-    color:#9e3d60;
-
-    margin-bottom:35px;
-
+.polaroid {
+  background:white;
+  padding:12px 12px 20px;
+  box-shadow:0 12px 28px #88627d20;
+  transform:rotate(-2deg);
+  transition:.3s;
 }
-
 
-.surprise h2 span{
+.polaroid:nth-child(even) { transform:rotate(3deg); }
 
-    display:block;
+.polaroid:hover { transform:rotate(0) translateY(-7px); }
 
-    color:#d66f91;
-
-    font-style:italic;
-
+.photo {
+  aspect-ratio:1;
+  background:linear-gradient(135deg,#f9dce7,#e9e3f8);
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  color:#9a7890;
 }
-
 
-.surprise-description{
-
-    font-size:19px;
-
-    line-height:2;
-
-    color:#765060;
-
+.photo img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
-
-
-button{
 
-    margin-top:45px;
-
-    padding:17px 35px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #b8446c,
-            #dc7899
-        );
-
-    color:white;
-
-    font-family:Georgia,serif;
-
-    font-size:17px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 15px 35px
-        rgba(180,65,105,.22);
-
-    transition:.3s;
-
+.polaroid label {
+  display:block;
+  text-align:center;
+  font:22px 'Parisienne';
+  padding-top:12px;
 }
-
 
-button:hover{
-
-    transform:
-        translateY(-4px)
-        scale(1.03);
-
+.final {
+  background:radial-gradient(ellipse at top,#634c68,#2e2739 75%);
+  color:#fff4f8;
+  text-align:center;
 }
-
-
-#secret{
-
-    display:none;
-
-    max-width:680px;
 
-    margin:
-        45px auto 0;
+.final h2 { color:#fff4f8; }
 
-    padding:
-        40px 30px;
-
-    border-radius:28px;
-
-    background:
-        rgba(255,255,255,.76);
-
-    border:
-        1px solid
-        rgba(175,75,107,.12);
-
-    box-shadow:
-        0 20px 50px
-        rgba(130,55,80,.1);
-
-    animation:
-        reveal .8s ease;
-
+.final p {
+  max-width:680px;
+  margin:20px auto;
+  line-height:2;
+  color:#e8d8e4;
 }
-
 
-#secret p{
-
-    font-size:20px;
-
-    line-height:2;
-
-    color:#704657;
-
+.signature {
+  font:32px 'Parisienne';
+  color:#f2bad0;
+  margin:30px;
 }
-
-
-#secret strong{
 
-    color:#b4426b;
-
+.secret-note {
+  display:none;
+  padding:25px;
+  margin:25px auto;
+  max-width:550px;
+  border:1px solid #94758f;
+  border-radius:20px;
+  line-height:1.8;
 }
-
-
-@keyframes reveal{
 
-    from{
-        opacity:0;
-        transform:
-            translateY(25px)
-            scale(.96);
-    }
+.secret-note.show { display:block; }
 
-    to{
-        opacity:1;
-        transform:
-            translateY(0)
-            scale(1);
-    }
-
+.music {
+  position:fixed;
+  bottom:15px;
+  right:15px;
+  z-index:10;
+  background:#ffffffdf;
+  padding:10px 15px;
+  border-radius:30px;
+  border:1px solid #f0dce6;
 }
-
-
-/* =====================================================
-   FINAL
-===================================================== */
-
-.final{
 
-    min-height:90vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    background:
-        linear-gradient(
-            180deg,
-            #fff4f8,
-            #ffe7ef
-        );
-
+.music button {
+  border:0;
+  background:none;
+  color:#986a86;
+  font-size:20px;
 }
 
-
-.final-content{
-
-    max-width:850px;
-
+#confetti {
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:100;
+  overflow:hidden;
 }
-
-
-.final-heart{
-
-    font-size:75px;
-
-    margin-bottom:30px;
 
-    animation:
-        heartbeat 1.7s infinite;
-
+.piece {
+  position:absolute;
+  top:-20px;
+  width:8px;
+  height:13px;
+  animation:fall 4s linear forwards;
 }
-
-
-@keyframes heartbeat{
 
-    50%{
-        transform:scale(1.14);
-    }
-
+@keyframes fall {
+  to { transform:translateY(110vh) rotate(760deg); }
 }
-
-
-.final h2{
 
-    font-size:
-        clamp(
-            48px,
-            9vw,
-            100px
-        );
-
-    font-weight:normal;
-
-    color:#9b3d60;
-
-    line-height:.95;
-
-    margin-bottom:35px;
-
+.heart {
+  position:fixed;
+  bottom:-30px;
+  pointer-events:none;
+  animation:rise 5s linear forwards;
 }
-
-
-.final p{
 
-    font-size:20px;
-
-    line-height:2;
-
-    color:#765160;
-
+@keyframes rise {
+  to { transform:translateY(-110vh) rotate(25deg);opacity:0; }
 }
-
-
-.final strong{
-
-    color:#c24d74;
 
+@media(max-width:700px) {
+  section { padding:70px 18px; }
+  .cards { grid-template-columns:repeat(2,1fr); }
+  .wish-grid { grid-template-columns:repeat(2,1fr); }
+  .gallery-grid { grid-template-columns:repeat(2,1fr); }
 }
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-
-    padding:45px 20px;
-
-    text-align:center;
-
-    background:#8f3c59;
-
-    color:#ffeaf1;
 
-    font-family:Arial,sans-serif;
-
-    font-size:11px;
-
-    letter-spacing:3px;
-
+@media(max-width:420px) {
+  .cards { gap:10px; }
+  .reason { padding:17px; }
 }
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:600px){
 
-    section{
-        padding:90px 18px;
-    }
-
-    .hero h1{
-        letter-spacing:-3px;
-    }
-
-    .letter{
-        padding:40px 25px;
-    }
-
-    .letter p{
-        font-size:18px;
-    }
-
-    .bracelet{
-        transform:scale(.82);
-    }
-
-    .gift-stage{
-        height:420px;
-    }
-
+@media(prefers-reduced-motion:reduce) {
+  *,*:before,*:after {
+    animation-duration:.01ms!important;
+    scroll-behavior:auto!important;
+    transition-duration:.01ms!important;
+  }
 }
-
 </style>
-
 </head>
-
 
 <body>
 
+<div id="progress"></div>
+<div id="confetti"></div>
 
-<div id="petals"></div>
+<!-- OPENING SURPRISE -->
+<div id="intro">
+  <div>
+    <div class="kicker">A tiny world made just for you</div>
+    <h1 class="intro-title">
+      Heyyyyy<br><span>Priyanshiiiiii!</span> 💗
+    </h1>
+    <p>Someone very special has a birthdayyyy...</p>
+    <span class="gift">🎁</span>
+    <button class="btn" id="openGift">OPEN YOUR SURPRISE 🎀</button>
+  </div>
+</div>
 
+<main id="main">
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
+<!-- HERO -->
 <section class="hero">
+  <span class="decor a">✧</span>
+  <span class="decor b">♡</span>
+  <span class="decor c">🌸</span>
 
-<div class="hero-content">
-
-    <div class="eyebrow">
-        A little Raksha Bandhan surprise
-    </div>
-
+  <div class="wrap">
+    <div class="kicker">Today is all about you</div>
+    <div class="hero-cake">🎂</div>
 
     <h1>
-
-        For
-
-        <span>
-            Priyanshi
-        </span>
-
+      HAPPIEST
+      <span>Birthdayyyyy</span>
+      PRIYANSHIIII!!
     </h1>
 
-
-    <p>
-
-        Today felt like the perfect excuse
-        to remind one of my favorite people
-        just how special she is.
-
-        <br><br>
-
-        So...
-
-        I made you a little something. 🌸
-
+    <p class="lead">
+      To one of the most precious souls I've ever come across.
+      Today, the world gets another reason to celebrate you. 💗
     </p>
 
-</div>
-
-
-<div class="scroll">
-    SCROLL DOWN ↓
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DIGITAL GIFT
-===================================================== -->
-
-<section class="gift">
-
-<div class="inner">
-
-    <div class="label">
-        A little gift
-    </div>
-
-
-    <h2 class="title">
-        Something For You
-    </h2>
-
-
-    <p class="description">
-
-        A tiny reminder of a friendship
-        that means a lot to me.
-
+    <p class="lead" style="margin-top:20px">
+      I hope this year brings you everything your heart has ever
+      wished for. You deserve endless happiness, beautiful surprises,
+      genuine smiles, peaceful days and all the little things that
+      make life wonderful.
     </p>
 
-
-    <div class="gift-stage">
-
-        <div class="bracelet">
-
-            <div class="ring"></div>
-
-            <div class="center">
-                ♡
-            </div>
-
-        </div>
-
-
-        <div class="gift-caption">
-
-            A little symbol for
-            a friendship I really treasure. 💗
-
-        </div>
-
-    </div>
-
-</div>
-
+    <p style="margin-top:40px">SCROLL DOWN FOR YOUR SURPRISE ↓</p>
+  </div>
 </section>
 
+<!-- LETTER -->
+<section class="soft center">
+  <div class="wrap">
+    <div class="kicker">Something from the heart</div>
+    <h2>A Little Letter For You 💌</h2>
+    <p class="lead">Some things deserve more than a birthday text.</p>
 
-
-<!-- =====================================================
-     PERSONAL LETTER
-===================================================== -->
-
-<section class="letter-section">
-
-<div class="inner">
-
-    <div class="label">
-        A little note
+    <div class="card">
+      <button class="envelope" id="openLetter">💌</button>
+      <p id="letterHint">TAP TO OPEN YOUR LETTER</p>
+      <div class="letter" id="letter"></div>
     </div>
-
-
-    <h2 class="title">
-        Priyanshi, Read This
-    </h2>
-
-
-    <div class="letter">
-
-        <p>
-            Priyanshi,
-        </p>
-
-
-        <p>
-
-            There are some people who have
-            this effortless way of becoming
-            important to you.
-
-            You don't even notice it happening.
-
-            One day they're just someone
-            you talk to...
-
-            and then suddenly,
-            their messages are something
-            you genuinely look forward to.
-
-        </p>
-
-
-        <p>
-
-            And that's you.
-
-        </p>
-
-
-        <p>
-
-            I really love all the little things
-            you do.
-
-            Like how you somehow always manage
-            to find the <span class="highlight">
-            perfect song for whatever situation
-            I'm in.</span>
-
-        </p>
-
-
-        <p>
-
-            If I mess something up,
-            do something stupid,
-            or end up in some completely
-            ridiculous situation...
-
-            somehow you have a song for it. 😭
-
-            And the worst part is that
-            it's always ridiculously accurate.
-
-        </p>
-
-
-        <p>
-
-            And then there's the fact that you
-            literally wake yourself up in the morning
-            just to greet me before I get busy
-            with college and can't talk to you much.
-
-        </p>
-
-
-        <p>
-
-            You don't have to do that.
-
-            That's exactly why it means so much.
-
-            It's such a small thing,
-            but knowing that you make that effort
-            just to get a little time with me
-            before my day starts...
-
-            I genuinely appreciate it.
-
-        </p>
-
-
-        <p>
-
-            Those are the things I notice.
-
-            The little things.
-
-            The random songs.
-            The early mornings.
-            The stupid conversations.
-            The jokes.
-            The tiny efforts.
-
-        </p>
-
-
-        <p>
-
-            You might not think much of them,
-
-            but they mean more to me
-            than you probably realize.
-
-        </p>
-
-
-        <p>
-
-            And I hope you know that
-            <span class="highlight">
-            you're genuinely special.</span>
-
-            Not because of one big thing,
-
-            but because of all those little
-            pieces of you that make you...
-
-            you.
-
-        </p>
-
-
-        <p>
-
-            I'm really glad I got to know you,
-            Priyanshi.
-
-        </p>
-
-
-        <div class="signature">
-
-            — From someone who's
-            really glad you're here. ❤️
-
-        </div>
-
-    </div>
-
-</div>
-
+  </div>
 </section>
 
+<!-- SPECIAL THINGS -->
+<section class="center">
+  <div class="wrap">
+    <div class="kicker">A few things worth celebrating</div>
+    <h2>Why You're So Special 🌷</h2>
 
+    <div class="cards">
+      <div class="reason">
+        <div class="emoji">🌸</div>
+        <h3>Your Kindness</h3>
+        <p>Your kindness makes a difference, even in ways you might not notice.</p>
+      </div>
 
-<!-- =====================================================
-     APPRECIATION
-===================================================== -->
+      <div class="reason">
+        <div class="emoji">☀️</div>
+        <h3>Your Smile</h3>
+        <p>Your smile deserves to stay, especially on ordinary days.</p>
+      </div>
 
-<section class="details">
+      <div class="reason">
+        <div class="emoji">🦋</div>
+        <h3>Your Presence</h3>
+        <p>You have a way of making things feel a little better.</p>
+      </div>
 
-<div class="inner">
+      <div class="reason">
+        <div class="emoji">💗</div>
+        <h3>Your Realness</h3>
+        <p>You're one of those rare, genuine people. Never lose that.</p>
+      </div>
 
-    <div class="label">
-        The little things
+      <div class="reason">
+        <div class="emoji">✨</div>
+        <h3>Your Dreams</h3>
+        <p>You deserve every beautiful thing life has waiting for you.</p>
+      </div>
+
+      <div class="reason">
+        <div class="emoji">🌼</div>
+        <h3>Simply You</h3>
+        <p>Never stop being the wonderful person you are.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRIENDSHIP -->
+<section class="friendship center">
+  <div class="wrap">
+    <div class="kicker">Our little corner</div>
+    <h2>Some People Just Become<br>Your Favourite People 🧸</h2>
+
+    <div class="card">
+      <p class="lead">
+        It's the random conversations, the silly jokes, laughing at
+        absolutely nothing, and those little moments that somehow
+        become big memories.
+      </p>
+
+      <p class="lead" style="margin-top:20px">
+        It's being comfortable enough to be completely yourself,
+        and having someone genuine to talk to.
+        I'm grateful for the laughs, conversations and all the
+        little bits of friendship that make life nicer.
+      </p>
+
+      <div class="quote">
+        "Not every beautiful connection needs a name.
+        Some people simply become important, and you're one of those people."
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WISHES -->
+<section class="center">
+  <div class="wrap">
+    <div class="kicker">A hundred little good things</div>
+    <h2>100 Little Wishes For You ✨</h2>
+    <p class="lead">One birthday wish could never be enough.</p>
+
+    <button class="btn" id="unlock">UNLOCK YOUR WISHES 💗</button>
+
+    <div class="wish-grid" id="wishGrid"></div>
+  </div>
+</section>
+
+<!-- REMINDERS -->
+<section class="reminders center">
+  <div class="wrap">
+    <div class="kicker">Save these in your heart</div>
+    <h2>A Little Reminder 🌸</h2>
+
+    <div class="reminder-list">
+      <span class="reminder">You're enough.</span>
+      <span class="reminder">You're appreciated.</span>
+      <span class="reminder">You're important.</span>
+      <span class="reminder">Dream big.</span>
+      <span class="reminder">You deserve happiness.</span>
+      <span class="reminder">Never dim your light.</span>
+      <span class="reminder">Keep being YOU.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CAKE -->
+<section class="cake-area center">
+  <div class="wrap">
+    <div class="kicker">A birthday tradition</div>
+    <h2>Make A Wish, Priyanshiiii! 🎂</h2>
+    <p class="lead">Tap every candle to blow it out!</p>
+
+    <div class="candles">
+      <button class="candle"></button>
+      <button class="candle"></button>
+      <button class="candle"></button>
+      <button class="candle"></button>
+      <button class="candle"></button>
     </div>
 
+    <div class="cake">🎂</div>
 
-    <h2 class="title">
-        Things I Notice
-    </h2>
+    <p id="cakeMessage">
+      Five little candles. Five little wishes. 💕
+    </p>
+  </div>
+</section>
 
+<!-- GALLERY -->
+<section class="gallery center">
+  <div class="wrap">
+    <div class="kicker">Little moments, lovely memories</div>
+    <h2>A Scrapbook Of Us 📸</h2>
 
-    <p class="description">
-
-        Because sometimes the smallest
-        things say the most.
-
+    <p class="lead">
+      Add your actual pictures here to make this corner
+      even more personal.
     </p>
 
+    <div class="gallery-grid" id="gallery">
+      <div class="polaroid">
+        <div class="photo">Your favourite photo ✿</div>
+        <label>A little moment</label>
+      </div>
 
-    <div class="grid">
+      <div class="polaroid">
+        <div class="photo">Add a memory ♡</div>
+        <label>Good times</label>
+      </div>
 
-
-        <div class="detail">
-
-            <div class="icon">
-                🎵
-            </div>
-
-            <h3>
-                Your Perfect Songs
-            </h3>
-
-            <p>
-
-                Somehow every situation gets
-                its own soundtrack when you're around.
-
-                And somehow you always manage
-                to find the perfect one.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="detail">
-
-            <div class="icon">
-                🌅
-            </div>
-
-            <h3>
-                Your Morning Messages
-            </h3>
-
-            <p>
-
-                You waking yourself up just to
-                say good morning before college
-                takes up my day...
-
-                that's something I'll always
-                appreciate.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="detail">
-
-            <div class="icon">
-                😂
-            </div>
-
-            <h3>
-                Your Chaos
-            </h3>
-
-            <p>
-
-                Somehow even the most ordinary
-                conversation can turn completely
-                ridiculous with you.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="detail">
-
-            <div class="icon">
-                🌷
-            </div>
-
-            <h3>
-                Your Little Efforts
-            </h3>
-
-            <p>
-
-                You probably don't realize
-                how many little things you do
-                that actually mean a lot.
-
-            </p>
-
-        </div>
-
+      <div class="polaroid">
+        <div class="photo">One for memories ✨</div>
+        <label>Our kind of chaos</label>
+      </div>
     </div>
 
-</div>
+    <br>
 
+    <label class="btn" for="photos">＋ ADD YOUR PHOTOS</label>
+    <input type="file" id="photos" accept="image/*" multiple hidden>
+  </div>
 </section>
 
-
-
-<!-- =====================================================
-     MEMORIES
-===================================================== -->
-
-<section class="memories">
-
-<div class="inner">
-
-    <div class="label">
-        Our little moments
-    </div>
-
-
-    <h2 class="title">
-        Things Worth Keeping
-    </h2>
-
-
-    <p class="description">
-
-        A few little spaces for the memories
-        that belong to you two.
-
-    </p>
-
-
-    <div class="grid">
-
-
-        <div class="memory">
-
-            <div class="memory-icon">
-                💬
-            </div>
-
-            <h3>
-                The Random Talks
-            </h3>
-
-            <p>
-
-                Those conversations that were
-                supposed to be short and somehow
-                turned into hours.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="memory">
-
-            <div class="memory-icon">
-                😭
-            </div>
-
-            <h3>
-                The Absolutely Stupid Moments
-            </h3>
-
-            <p>
-
-                The moments that made absolutely
-                no sense but somehow became
-                unforgettable.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="memory">
-
-            <div class="memory-icon">
-                🌸
-            </div>
-
-            <h3>
-                The Little Things
-            </h3>
-
-            <p>
-
-                Small messages,
-                random songs,
-                morning greetings,
-                and everything in between.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     SURPRISE
-===================================================== -->
-
-<section class="surprise">
-
-<div class="surprise-content">
-
-    <div class="label">
-        One last thing
-    </div>
-
-
-    <h2>
-
-        This one's
-
-        <span>
-            just for you.
-        </span>
-
-    </h2>
-
-
-    <p class="surprise-description">
-
-        You've made it this far.
-
-        <br><br>
-
-        So I saved one final little message
-        for you.
-
-    </p>
-
-
-    <button onclick="openMessage()">
-
-        Open Your Message 💌
-
-    </button>
-
-
-    <div id="secret">
-
-        <p>
-
-            Priyanshi,
-
-            <br><br>
-
-            Happy Raksha Bandhan. 🌷
-
-            <br><br>
-
-            I hope today reminds you
-            of something you should already know:
-
-            <br><br>
-
-            <strong>
-                You're incredibly special.
-            </strong>
-
-            <br><br>
-
-            Never underestimate the little
-            things you do or the way you make
-            the people around you feel.
-
-            <br><br>
-
-            Keep being you.
-
-            Keep being chaotic.
-
-            Keep sending those suspiciously
-            accurate songs. 😭
-
-            And please keep waking up
-            to say good morning.
-
-            <br><br>
-
-            Because those little things
-            mean more than you know.
-
-            <br><br>
-
-            <strong>
-                Happy Raksha Bandhan,
-                Priyanshi. ❤️
-            </strong>
-
-        </p>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FINAL
-===================================================== -->
-
+<!-- FINAL MESSAGE -->
 <section class="final">
+  <div class="wrap">
+    <div class="kicker">One last thing</div>
 
-<div class="final-content">
-
-    <div class="final-heart">
-        💗
-    </div>
-
-
-    <h2>
-
-        Happy Raksha
-        <strong>Bandhan</strong>
-
-    </h2>
-
+    <h2>One Last Thing,<br>Priyanshi...</h2>
 
     <p>
-
-        To one of the most wonderful people
-        I've had the chance to know.
-
-        <br><br>
-
-        I hope you have a beautiful day.
-
-        <br><br>
-
-        And I hope you always remember...
-
-        <br><br>
-
-        <strong>
-            I'm really glad you're in my life,
-            Priyanshi. 🌸
-        </strong>
-
+      Thank you for being one of the most genuine and beautiful
+      parts of my life.
     </p>
 
-</div>
+    <p>
+      I don't know what the future holds, but I genuinely hope
+      it brings you everything you've been working and wishing for.
+      I hope you laugh a little louder, smile a little more,
+      achieve everything you dream of and never lose the beautiful
+      spark that makes you YOU.
+    </p>
 
+    <p>
+      And no matter how busy life gets, I hope we never lose
+      this beautiful friendship.
+    </p>
+
+    <p>Stay happy. Stay blessed. Stay exactly the way you are.</p>
+
+    <h2>Happiest Birthday Once Again,<br>Priyanshiiiiii!! 💗</h2>
+
+    <div class="signature">
+      With lots and lots of appreciation, care and friendship. 💗
+    </div>
+
+    <button class="btn" id="secretBtn">One More Thing... ♡</button>
+
+    <div class="secret-note" id="secretNote">
+      And if you ever forget how special you are,
+      I hope this little page reminds you.
+
+      The world is better with you in it.
+      Keep shining, keep laughing, and please never stop being you. 🌷
+    </div>
+  </div>
 </section>
 
-
-
-<footer>
-
-    MADE ESPECIALLY FOR PRIYANSHI
-    • HAPPY RAKSHA BANDHAN 💗
-
+<footer style="text-align:center;padding:25px;background:#2e2739;color:#cbb7c8">
+  Made with care, a little sparkle, and lots of friendship. ♡
 </footer>
 
+</main>
 
+<!-- MUSIC PLAYER -->
+<div class="music">
+  <button id="musicBtn">♫</button>
+  <span id="musicLabel">Music: off</span>
+</div>
+
+<!-- Add your own royalty-free MP3 file here -->
+<audio id="music" loop>
+  <!-- <source src="your-music.mp3" type="audio/mpeg"> -->
+</audio>
 
 <script>
 
-/* =====================================================
-   FLOATING PETALS
-===================================================== */
+// OPENING SURPRISE
+document.getElementById('openGift').onclick = () => {
+  confetti(150);
+  hearts(20);
 
-const petalBox =
-    document.getElementById("petals");
+  document.getElementById('intro').classList.add('hide');
+  document.getElementById('main').classList.add('ready');
+
+  setTimeout(() => {
+    document.getElementById('intro').remove();
+  }, 1000);
+};
 
 
-const symbols = [
-    "🌸",
-    "🌷",
-    "✿",
-    "♡",
-    "✦",
-    "✨"
+// BIRTHDAY LETTER
+const letterText = `Dear Priyanshi,
+
+I genuinely don't know where to start because some people are just difficult to describe in words. You're one of those people.
+
+I'm honestly so grateful that I got to know you. In a world where genuine connections are becoming so rare, having someone like you is something I'll always appreciate.
+
+You're not just another person I talk to. You're someone whose presence makes ordinary days a little better. Someone I can laugh with, share random things with, talk about absolutely nothing and somehow still have the best conversations.
+
+I hope you never forget how special you are. Never let anyone make you question your worth or the beautiful person you are.
+
+Thank you for being YOU. Thank you for all the little moments, laughs, conversations and memories.
+
+I genuinely hope we create a million more memories together.
+
+Happy birthday, Priyanshi. Always keep smilinggggg. 💗`;
+
+let letterOpened = false;
+
+document.getElementById('openLetter').onclick = () => {
+  if(letterOpened) return;
+
+  letterOpened = true;
+
+  const box = document.getElementById('letter');
+  document.getElementById('letterHint').textContent =
+    'A LITTLE NOTE FOR YOU 💗';
+
+  box.style.display = 'block';
+
+  let i = 0;
+
+  const timer = setInterval(() => {
+    box.textContent = letterText.slice(0, i += 3);
+
+    if(i >= letterText.length) clearInterval(timer);
+  }, 16);
+};
+
+
+// 100 WISHES
+const wishes = [
+"May your days be full of sunshine ☀️",
+"May your heart always feel at peace 🕊️",
+"May every dream find its way to you ✨",
+"May you always feel loved 💗",
+"May laughter find you every day 😄",
+"May good health stay by your side 🌿",
+"May you be proud of how far you've come 🌷",
+"May courage meet you at every turn 🦋",
+"May new doors open for you 🚪",
+"May your efforts bloom into success 🌼",
+"May you find beauty in little things 🌸",
+"May your confidence keep growing 🌟",
+"May kind people surround you 🤍",
+"May your worries feel lighter ☁️",
+"May you get countless reasons to celebrate 🎉",
+"May your favourite songs find you 🎶",
+"May every new beginning be beautiful 🌅",
+"May you travel to places you dream of 🌍",
+"May you never run out of curiosity 🔎",
+"May your confidence keep growing 💫",
+"May your kindness return to you tenfold 💌",
+"May you get peaceful nights 🌙",
+"May you feel safe being yourself 🫶",
+"May you make memories worth keeping 📸",
+"May your hard work be rewarded 🏆",
+"May you laugh until your cheeks hurt 😂",
+"May you always have someone to call 🤗",
+"May your future feel exciting 🌈",
+"May you find time for what you love 🎨",
+"May you be gentle with yourself 🌺",
+"May every setback teach you something 🌱",
+"May you always have hope 💛",
+"May your plans work out beautifully 🗓️",
+"May you discover something wonderful 📚",
+"May you be surrounded by honesty 🧡",
+"May your smile come easily 😊",
+"May you feel appreciated every day 💐",
+"May you keep your beautiful spark ✨",
+"May your heart stay brave 🦁",
+"May you enjoy the little victories 🥳",
+"May you find calm in busy moments 🍃",
+"May you always have reasons to dream 🌠",
+"May opportunities find you 🚀",
+"May your friendships stay genuine 🫂",
+"May you feel proud of your journey 🛤️",
+"May you have beautiful days 🌻",
+"May you be protected from negativity 🧿",
+"May your kindness never be taken for granted 🌷",
+"May you have adventures to remember 🧳",
+"May every season bring something lovely 🍂",
+"May your voice always be heard 🎤",
+"May you keep learning and growing 🌳",
+"May your goals feel closer every day 🎯",
+"May you always find a reason to smile 💕",
+"May your home feel warm and safe 🏡",
+"May you get surprises that make your day 🎁",
+"May your creativity flourish 🎀",
+"May you be surrounded by positive energy ☀️",
+"May you never doubt your worth 💎",
+"May you find magic in ordinary days 🪄",
+"May your patience bring beautiful things 🌾",
+"May you have courage 💪",
+"May your favourite people stay close 💞",
+"May you always feel understood 💬",
+"May your future be kinder than you imagine 🌤️",
+"May your talents take you far 🎓",
+"May you never stop exploring 🧭",
+"May you have time to breathe 🌬️",
+"May your little wishes come true ⭐",
+"May you find joy in unexpected places 🌼",
+"May you keep choosing happiness 💗",
+"May you be celebrated for being you 🎊",
+"May your dreams grow bigger 🌙",
+"May you always have something to look forward to 📅",
+"May your days be colourful 🎨",
+"May you feel stronger with every challenge 🦋",
+"May you receive the same care you give 🤍",
+"May every chapter bring growth 📖",
+"May you keep making beautiful memories 🥰",
+"May your laughter never fade 🌸",
+"May you be blessed with peace and barakah 🤲",
+"May your path be filled with goodness 🌿",
+"May you always have hope after hard days 🌅",
+"May you feel proud, not pressured 🌷",
+"May you find beauty in who you're becoming 🪞",
+"May your kindness change someone's day 💌",
+"May your heart stay soft and strong 💖",
+"May you celebrate yourself more often 🥂",
+"May your next year be your happiest yet 🎂",
+"May you always be surrounded by love 🫶",
+"May every effort lead somewhere wonderful 🌱",
+"May life surprise you in the sweetest ways 🎀",
+"May you chase your biggest dreams 🚀",
+"May your smile light up every room ☀️",
+"May you never forget how special you are 💗",
+"And may this birthday begin something beautiful ✨",
+"May you always have reasons to smile 🌷",
+"May you never stop believing in yourself 💕",
+"May happiness follow you everywhere 🌸",
+"May this year be unforgettable 🎂"
 ];
 
+const wishGrid = document.getElementById('wishGrid');
 
-for(let i=0;i<40;i++){
+wishes.forEach((wish, i) => {
+  const div = document.createElement('div');
+  div.className = 'wish';
+  div.textContent = `${i+1}. ${wish}`;
+  wishGrid.appendChild(div);
+});
 
-    const petal =
-        document.createElement("div");
+document.getElementById('unlock').onclick = () => {
+  document.querySelectorAll('.wish').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), i * 35);
+  });
+};
 
-    petal.className =
-        "petal";
 
-    petal.innerText =
-        symbols[
-            Math.floor(
-                Math.random() *
-                symbols.length
-            )
-        ];
+// CONFETTI
+function confetti(count = 100) {
+  const host = document.getElementById('confetti');
+  const colors = ['#f2a9c4','#d6c5f1','#f6d99b','#fff'];
 
-    petal.style.left =
-        Math.random()*100+"%";
+  for(let i=0; i<count; i++) {
+    const piece = document.createElement('i');
+    piece.className = 'piece';
+    piece.style.left = Math.random()*100 + '%';
+    piece.style.background =
+      colors[Math.floor(Math.random()*colors.length)];
 
-    petal.style.fontSize =
-        (10+Math.random()*17)+"px";
+    piece.style.animationDuration = (2+Math.random()*3)+'s';
 
-    petal.style.animationDuration =
-        (7+Math.random()*10)+"s";
-
-    petal.style.animationDelay =
-        (-Math.random()*15)+"s";
-
-    petalBox.appendChild(
-        petal
-    );
-
+    host.appendChild(piece);
+    setTimeout(() => piece.remove(), 5000);
+  }
 }
 
 
-/* =====================================================
-   SURPRISE MESSAGE
-===================================================== */
+// FLOATING HEARTS
+function hearts(count = 10) {
+  for(let i=0; i<count; i++) {
+    const heart = document.createElement('span');
 
-function openMessage(){
+    heart.className = 'heart';
+    heart.textContent = ['♡','♥','✧','🌸'][Math.floor(Math.random()*4)];
+    heart.style.left = Math.random()*100 + '%';
+    heart.style.fontSize = (15+Math.random()*20)+'px';
 
-    const secret =
-        document.getElementById("secret");
+    document.body.appendChild(heart);
 
-    secret.style.display =
-        "block";
-
-
-    const symbols = [
-
-        "💗",
-        "💖",
-        "🌸",
-        "🌷",
-        "✨",
-        "♡",
-        "🫶"
-
-    ];
+    setTimeout(() => heart.remove(), 6000);
+  }
+}
 
 
-    for(let i=0;i<55;i++){
+// BLOW OUT CANDLES
+document.querySelectorAll('.candle').forEach(candle => {
+  candle.onclick = () => {
+    if(candle.classList.contains('out')) return;
 
-        const p =
-            document.createElement("div");
+    candle.classList.add('out');
 
-        p.className =
-            "petal";
+    const remaining =
+      document.querySelectorAll('.candle:not(.out)').length;
 
-        p.innerText =
-            symbols[
-                Math.floor(
-                    Math.random() *
-                    symbols.length
-                )
-            ];
+    if(remaining === 0) {
+      document.getElementById('cakeMessage').textContent =
+        'May all your wishes come true! 💗';
 
-        p.style.left =
-            "50%";
-
-        p.style.top =
-            "50%";
-
-        p.style.fontSize =
-            (15+Math.random()*25)+"px";
-
-        p.style.animation =
-            "none";
-
-        p.style.transition =
-            "all 1.5s ease-out";
-
-        document.body.appendChild(p);
-
-
-        setTimeout(()=>{
-
-            p.style.transform =
-
-                `
-                translate(
-                    ${Math.random()*850-425}px,
-                    ${Math.random()*650-325}px
-                )
-                rotate(360deg)
-                `;
-
-            p.style.opacity =
-                "0";
-
-        },50);
-
-
-        setTimeout(()=>{
-
-            p.remove();
-
-        },1600);
-
+      confetti(180);
+      hearts(25);
+    } else {
+      document.getElementById('cakeMessage').textContent =
+        `${remaining} little candles left. Keep wishing! ✨`;
     }
+  };
+});
 
-}
+
+// PHOTO UPLOAD
+document.getElementById('photos').onchange = event => {
+  const gallery = document.getElementById('gallery');
+
+  [...event.target.files].forEach(file => {
+    if(!file.type.startsWith('image/')) return;
+
+    const url = URL.createObjectURL(file);
+
+    const card = document.createElement('div');
+    card.className = 'polaroid';
+
+    const photo = document.createElement('div');
+    photo.className = 'photo';
+
+    const img = document.createElement('img');
+    img.src = url;
+    img.alt = 'Friendship memory';
+
+    photo.appendChild(img);
+
+    const caption = document.createElement('label');
+    caption.textContent = 'A favourite memory ♡';
+
+    card.append(photo, caption);
+    gallery.appendChild(card);
+  });
+};
+
+
+// SECRET MESSAGE
+document.getElementById('secretBtn').onclick = () => {
+  document.getElementById('secretNote').classList.toggle('show');
+  hearts(12);
+};
+
+
+// OPTIONAL MUSIC
+const audio = document.getElementById('music');
+
+document.getElementById('musicBtn').onclick = async () => {
+  if(!audio.querySelector('source')) {
+    document.getElementById('musicLabel').textContent =
+      'Add your-music.mp3 first';
+    return;
+  }
+
+  if(audio.paused) {
+    try {
+      await audio.play();
+      document.getElementById('musicBtn').textContent = 'Ⅱ';
+      document.getElementById('musicLabel').textContent = 'Music on';
+    } catch(e) {
+      document.getElementById('musicLabel').textContent =
+        'Could not play music';
+    }
+  } else {
+    audio.pause();
+    document.getElementById('musicBtn').textContent = '♫';
+    document.getElementById('musicLabel').textContent = 'Music off';
+  }
+};
+
+
+// READING PROGRESS
+window.addEventListener('scroll', () => {
+  const max = document.documentElement.scrollHeight-innerHeight;
+  const progress = max > 0 ? scrollY/max*100 : 0;
+
+  document.getElementById('progress').style.width =
+    progress+'%';
+});
 
 </script>
-
-
 </body>
 </html>
